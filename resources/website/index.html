@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="jevote.bar" lang="fr">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,21 +10,13 @@
 
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/zerogrid.css" >
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		
-		<script>
-		$(document).ready(function() {
-			$("#select").click(function(e) {
-					console.log("select");
-			    $("#popup-select").show();
-			});
-		});
-		</script>
+		<script src="js/ng_app.js"></script>
 
 	</head>
-	<body class="">
+	<body ng-controller="MainController">
 <!--==============================header=================================-->
 		<header class="page1">
 			<div class="zerogrid">
@@ -66,13 +58,23 @@
 
 				<div class="row row-podium">
 
-					<div class="col-1-5-x offset-2-5"><div class="wrap-col"><a href="#" class="add_candidate"></a></div></div>
+					<div class="col-1-5-x offset-2-5">
+						<div class="wrap-col">
+							<div ng-if="!ranking[1]" ng-click="choose(1)" class="add_candidate"></div>
+							<span ng-if="ranking[1]" class="selected">{{ranking[1]}}</span>
+						</div>
+					</div>
 
 				</div>
 
 				<div class="row row-podium">
 
-					<div class="col-1-5-x offset-1-5"><div class="wrap-col"><a href="#" class="add_candidate"></a></div></div>
+					<div class="col-1-5-x offset-1-5">
+						<div class="wrap-col">
+							<div ng-if="!ranking[2]" ng-click="choose(2)" class="add_candidate"></div>
+							<span ng-if="ranking[2]" class="selected">{{ranking[2]}}</span>
+						</div>
+					</div>
 					<div class="col-1-5-x podium"><div class="wrap-col">1</div></div>
 
 				</div>
@@ -81,7 +83,12 @@
 
 					<div class="col-1-5-x offset-1-5 podium"><div class="wrap-col">2</div></div>
 					<div class="col-1-5-x podium text-fill"><div class="wrap-col">.</div></div>
-					<div class="col-1-5-x"><div class="wrap-col"><a id="select" class="add_candidate"></a> </div></div>
+					<div class="col-1-5-x">
+						<div class="wrap-col">
+							<div ng-if="!ranking[3]" ng-click="choose(3)" class="add_candidate"></div>
+							<span ng-if="ranking[3]" class="selected">{{ranking[3]}}</span>
+						</div>
+					</div>
 
 				</div>
 
@@ -91,8 +98,11 @@
 					<div class="col-1-5-x podium"><div class="wrap-col">3</div></div>
 
 				</div>
-
-
+				<br />
+				<span class="" ng-show="showReset" ng-click="reset()">Remettre à zéro</span>
+				<br />
+				<br />
+				<button ng-if="showVoteButton" class="button" ng-click="vote()">{{buttonText}}</button>
 			</div>
 		</div>
 
@@ -163,14 +173,12 @@
 
 		<div class="clear"></div>
 
-		<div id="popup-select">
-			<!-- <div class="zerogrid"> -->
-				<div class="select-candidate">Melenchon</div>
-				<div class="select-candidate">Hamon</div>
-				<div class="select-candidate">Macron</div>
-				<div class="select-candidate">Le Pen</div>
-				<div class="select-candidate">Fillon</div>
-			<!-- </div> -->
+		<div ng-show="showSelect" id="popup-select">
+
+			<div ng-repeat="candidate in candidatesList" class="select-candidate">
+				<span ng-click="select(candidate)">{{candidate}}</span>
+			</div>
+
 		</div>
 
 

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Je vote</title>
+
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/zerogrid.css" >
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		
+		<script>
+		$(document).ready(function() {
+			$("#select").click(function(e) {
+					console.log("select");
+			    $("#popup-select").show();
+			});
+		});
+		</script>
+
+	</head>
+	<body class="">
+<!--==============================header=================================-->
+		<header class="page1">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<h1>jevote.bar</h1>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+
+<!--=======content================================-->
+		<div id="page1" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+							<h2>Votons autrement</h2>
+							<br>
+							<h3>Composez votre podium pour la présidentielle 2017</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="page3" class="content">
+			<div class="zerogrid">
+
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3>Votre podium</h3>
+							<div class="text1">
+								Faites votre choix :
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row row-podium">
+
+					<div class="col-1-5-x offset-2-5"><div class="wrap-col"><a href="#" class="add_candidate"></a></div></div>
+
+				</div>
+
+				<div class="row row-podium">
+
+					<div class="col-1-5-x offset-1-5"><div class="wrap-col"><a href="#" class="add_candidate"></a></div></div>
+					<div class="col-1-5-x podium"><div class="wrap-col">1</div></div>
+
+				</div>
+
+				<div class="row row-podium">
+
+					<div class="col-1-5-x offset-1-5 podium"><div class="wrap-col">2</div></div>
+					<div class="col-1-5-x podium text-fill"><div class="wrap-col">.</div></div>
+					<div class="col-1-5-x"><div class="wrap-col"><a id="select" class="add_candidate"></a> </div></div>
+
+				</div>
+
+				<div class="row row-podium">
+
+					<div class="col-2-5-x offset-1-5 podium text-fill"><div class="wrap-col">.</div></div>
+					<div class="col-1-5-x podium"><div class="wrap-col">3</div></div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+		<div id="page5" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3>Pourquoi ?</h3>
+
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<div class="box maxheight1">
+										<div class="box_inner">
+											<img src="images/ic_1.png" alt="">
+											<div class="text1">
+												Lassés de se voir une nouvelle fois invités à faire le choix entre un vote de sens et un vote utile, nous pensons que nous devons <span class="highlight">innover dans la manière d'organiser le processus électoral</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<div class="box maxheight1">
+										<div class="box_inner">
+											<img src="images/ic_2.png" alt="">
+											<div class="text1">
+												Mettre dans l'ordre 3 candidats nous permettrait d'indiquer à la fois quelle est <span class="highlight">notre conviction</span> mais aussi nos possibles second et troisième choix, et ainsi générer un consensus en ne <span class="highlight">votant qu'une seule fois</span>.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<div class="box maxheight1">
+										<div class="box_inner">
+											<img src="images/ic_3.png" alt="">
+											<div class="text1">
+												Invitez vos contacts à participer à cette <span class="highlight">expérience inédite dans l'histoire de la démocracie française</span> via Facebook.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+		<footer>
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="contact">
+							<a href="mailto:jevote.bar@gmail.com">Nous contacter</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="clear"></div>
+
+		<div id="popup-select">
+			<!-- <div class="zerogrid"> -->
+				<div class="select-candidate">Melenchon</div>
+				<div class="select-candidate">Hamon</div>
+				<div class="select-candidate">Macron</div>
+				<div class="select-candidate">Le Pen</div>
+				<div class="select-candidate">Fillon</div>
+			<!-- </div> -->
+		</div>
+
+
+	</body>
+</html>
